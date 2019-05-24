@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="1200.0" style="-fx-background-color: #005691;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.puntodeventa.controller.ClientesController">
+   <left>
+      <VBox prefHeight="432.0" prefWidth="300.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="30.0" prefWidth="265.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+               <children>
+                  <Label text="Datos" textFill="#e8f1f5">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="txtCedula" promptText="Cedula">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtPrimerNombre" prefHeight="30.0" prefWidth="246.0" promptText="Primer nombre">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtSegundoNombre" prefHeight="30.0" prefWidth="246.0" promptText="Segundo nombre">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtPrimerApellido" promptText="Primer apellido">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtSegundoApellido" promptText="Segundo apellido">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtTelefono" promptText="Telefono">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox prefHeight="30.0" prefWidth="255.0" spacing="15.0">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+               <children>
+                  <RadioButton fx:id="rbHombre" mnemonicParsing="false" selected="true" text="Hombre" textFill="#e8f1f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="bgGenero" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbMujer" mnemonicParsing="false" text="Mujer" textFill="#e8f1f5" toggleGroup="$bgGenero">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="192.0" spacing="10.0">
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#limpiarCajasTexto" style="-fx-background-color: #E8F1F5;" text="Limpiar" textFill="#005691" />
+                  <Button fx:id="btnRegistrar" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#registrarCliente" style="-fx-background-color: #E8F1F5;" text="Registrar" textFill="#005691" />
+                  <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizarCliente" style="-fx-background-color: #E8F1F5;" text="Actualizar" textFill="#005691" />
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelarActualizarCliente" style="-fx-background-color: #E8F1F5;" text="Cancelar" textFill="#005691">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="618.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefWidth="610.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.60001220703126" minWidth="0.0" prefWidth="72.60001220703126" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="720.4" minWidth="10.0" prefWidth="236.59998779296873" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="598.6000671386719" minWidth="10.0" prefWidth="584.2000427246094" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Buscar:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtBusqueda" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#devolverVistaMenu" text="Menú" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <TableView fx:id="tvClientes" editable="true" stylesheets="@../../styles/Styles.css" tableMenuButtonVisible="true">
+              <columns>
+                  <TableColumn fx:id="tcCedula" prefWidth="114.40002286434174" text="Cedula" />
+                <TableColumn fx:id="tcPrimerNombre" prefWidth="127.19998931884766" text="Primer nombre" />
+                <TableColumn fx:id="tcSegundoNombre" prefWidth="130.4000244140625" text="Segundo nombre" />
+                  <TableColumn fx:id="tcPrimerApellido" prefWidth="132.0" text="Primer apellido" />
+                  <TableColumn fx:id="tcSegundoApellido" prefWidth="136.00003051757812" text="Segundo apellido" />
+                  <TableColumn fx:id="tcGenero" minWidth="0.0" prefWidth="113.60003662109375" text="Genero" />
+                  <TableColumn fx:id="tcTelefono" prefWidth="141.5999755859375" text="Telefono" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Label text="Clientes" textFill="#e8f1f5" BorderPane.alignment="TOP_LEFT">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets left="30.0" right="30.0" top="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>
